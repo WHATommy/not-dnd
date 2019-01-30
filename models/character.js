@@ -1,8 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const characterSchema = new Schema({
-    //Character description
+const CharacterSchema = new Schema({
+    //Author
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+    },
+    //Character description(non-stats)
+    avatar: {
+        type: String,
+        required: false
+    },
     name: {
         type: String,
         require: false
@@ -21,7 +30,7 @@ const characterSchema = new Schema({
     },
     height: {
         type: Number,
-        required: true
+        required: false
     },
     weight: {
         type: Number,
@@ -96,10 +105,19 @@ const characterSchema = new Schema({
         type: String,
         required: false
     },
+    //Character description(stats)
+    race: {
+        type: String,
+        required: true
+    },
+    class: {
+        type: String,
+        required: true
+    },
     //Stats
     maximumHitPoints: {
         type: Number,
-        required: false
+        required: true
     },
     currentHitPoints: {
         type: Number,
@@ -115,27 +133,27 @@ const characterSchema = new Schema({
     },
     strength: {
         type: Number,
-        required: false
+        required: true
     },
     dexterity: {
         type: Number,
-        required: false
+        required: true
     },
     constitution: {
         type: Number,
-        required: false
+        required: true
     },
     intelligence: {
         type: Number,
-        required: false
+        required: true
     },
     wisdom: {
         type: Number,
-        required: false
+        required: true
     },
     charisma: {
         type: Number,
-        required: false
+        required: true
     },
     proficiencyBonus: {
         type: Number,
@@ -177,5 +195,7 @@ const characterSchema = new Schema({
     levelNineSpell: {
         type: Number,
         require: false
-    },
+    }
 })
+
+module.exports = Character = mongoose.model('characters', CharacterSchema)
