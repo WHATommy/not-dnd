@@ -21,7 +21,7 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(user)
+    console.log(user);
   }
 
   onChange(e) {
@@ -68,6 +68,7 @@ class Register extends Component {
               onChange={this.onChange}
             />
           </div>
+          <button>submit</button>
         </form>
       </div>
     )

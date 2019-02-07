@@ -8,7 +8,7 @@ class Landing extends Component {
                 <h1>Char Help</h1>
                 <p>Build your DnD Character</p>
                 <hr />
-                <Link to="/createcharacter">
+                <Link to="/createcharacterone">
                     Build
                 </Link>
             </div>
