@@ -98,4 +98,4 @@ const BackgroundSchema = new Schema({
     }
 })
 
-module.exports = Background = mongoose.model('backgrounds', BackgroundSchema)
+module.exports = Background = mongoose.model('backgrounds', BackgroundSchema);

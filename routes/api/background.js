@@ -7,11 +7,11 @@ const Background = require('../../models/background');
 router.get('/', (req, res) => {
     Background.find()
         .then(background => res.json(background))
-        .catch(err => res.status(404).json({ noBackground: 'There is nothing here' }))
+        .catch(err => res.status(404).json({ noBackground: 'There is nothing here' }));
 })
 
 router.post('/', (req, res) => {
-    const backgrounds = new Background(
+    const background = new Background(
         {
             name: req.name,
             skillProficiencies: [
@@ -61,8 +61,9 @@ router.post('/', (req, res) => {
         }
     )
 
-    backgrounds.save().then(background => res.json(background))
-        .catch(err => console.log(err))
+    background.save()
+        .then(background => res.json(background))
+        .catch(err => console.log(err));
 })
 
 module.exports = router;

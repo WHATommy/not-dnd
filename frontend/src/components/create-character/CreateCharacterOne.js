@@ -45,9 +45,9 @@ class CreateCharacterOne extends Component {
             .catch(err => console.log(err))
         //Retrieve races data 
         Axios
-            .get('http://www.dnd5eapi.co/api/races/')
+            .get('http://localhost:5050/api/race/')
             .then(res => {
-                const data = res.data.results.map(data => {
+                const data = res.data.map(data => {
                     return {
                         name: data.name
                     }

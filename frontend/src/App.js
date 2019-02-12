@@ -16,7 +16,7 @@ import CreateCharacterTwo from './components/create-character/CreateCharacterTwo
 class App extends Component {
   render() {
     return (
-      <Provider>
+      <Provider store={store}>
         <Router>
           <div className="App">
             <NavBar />
